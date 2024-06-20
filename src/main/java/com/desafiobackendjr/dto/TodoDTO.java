@@ -1,4 +1,7 @@
 package com.desafiobackendjr.dto;
 
-public record TodoDTO(String name, String description, boolean realized, int priority) {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+public record TodoDTO(@NotBlank String name, @NotBlank String description, @NotNull boolean realized, @NotNull int priority) {
 }
