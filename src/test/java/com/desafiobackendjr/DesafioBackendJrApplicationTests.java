@@ -35,7 +35,13 @@ class DesafioBackendJrApplicationTests {
 
     @Test
     void testCreateTodoFailure(){
-
+        var todo = new Todo("","",false,0);
+        webTestClient
+                .post()
+                .uri("/todo")
+                .bodyValue(todo)
+                .exchange()
+                .expectStatus().isBadRequest();
     }
 
 }
