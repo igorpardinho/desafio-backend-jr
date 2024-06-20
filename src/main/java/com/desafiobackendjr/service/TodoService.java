@@ -1,12 +1,11 @@
 package com.desafiobackendjr.service;
 
+
 import com.desafiobackendjr.entity.Todo;
 import com.desafiobackendjr.repository.TodoRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -30,16 +29,11 @@ public class TodoService {
         return getAll();
     }
 
-    public List<Todo> update(Todo todo) {
-        todoRepository.save(todo);
-        return getAll();
-    }
 
     public List<Todo> delete(UUID id) {
-       todoRepository.deleteById(id);
+        todoRepository.deleteById(id);
         return getAll();
     }
-
 
 
 }
